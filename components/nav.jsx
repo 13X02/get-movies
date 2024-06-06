@@ -24,12 +24,12 @@ const Navbar = ({ setSearchQuery,setFavClicked }) => {
         <div className='flex'>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <AiOutlineSearch className="w-4 h-4 text-gray-500 dark:text-gray-400" />
+              <AiOutlineSearch className="w-4 h-4 text-black" />
             </div>
             <input
               type="search"
               id="default-search"
-              className="block w-96 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-7"
+              className="block w-96 p-4 pl-10 text-sm text-black border border-gray-300 rounded-lg  h-7"
               placeholder="Search movies and series"
               value={searchTerm}
               onChange={handleSearchChange} // Attach onChange event handler

@@ -9,10 +9,16 @@ import Link from "next/link";
 
 const LikedMovies = () => {
     const [searchTerm, setSearchTerm] = useState('');
+    const [searchClicked, setSearchClicked] = useState(false);
   
     // Function to handle search input change
     const handleSearchChange = (e) => {
       setSearchTerm(e.target.value);
+      if(e.target.value === ''){
+        setSearchClicked(false);
+      }else{
+        setSearchClicked(true);
+      }
     };
 
     // Function to clear the search input
@@ -78,7 +84,7 @@ const LikedMovies = () => {
                         <input
                             type="search"
                             id="default-search"
-                            className="block w-54 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 h-7"
+                            className="block w-54 p-4 pl-10 text-sm text-black border border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500   h-7"
                             placeholder="Search from favourites"
                             value={searchTerm}
                             onChange={handleSearchChange}
@@ -93,7 +99,8 @@ const LikedMovies = () => {
                 </div>
             </div>
             <div className="px-4 py-8">
-                <div className="grid grid-cols-4 gap-6">
+                {searchClicked?(<><p>{filteredMovies.length} Result found</p></>):(<></>)}
+                <div className="grid grid-cols-4 gap-6 px-32">
                     {filteredMovies.map((movie, index) => (
                         <MovieCard 
                             key={index}
