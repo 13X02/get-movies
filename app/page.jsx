@@ -47,7 +47,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchMovies = async () => {
-      fetch('http://localhost:3001/api/movies/').then((res) => {
+      fetch('https://movie-backend-ll6b.onrender.com/api/movies/').then((res) => {
         if (!res.ok) {
           throw new Error('Failed to fetch movies');
         }
@@ -71,7 +71,7 @@ export default function Home() {
       if (searchQuery.length > 0) {
         setFavClicked(false);
         setIsSearching(true);
-        fetch(`http://localhost:3001/api/movies/search?title=${searchQuery}`).then((res) => {
+        fetch(`https://movie-backend-ll6b.onrender.com/api/movies/search?title=${searchQuery}`).then((res) => {
           if (!res.ok) {
             throw new Error('Failed to search movies');
           }
