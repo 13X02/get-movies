@@ -119,17 +119,11 @@ export default function Home() {
 
             </>
           )}
-          <div className="grid gap-x-6 gap-y-10 px-32" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
-  {movies.map((movie, index) => (
-    <MovieCard 
-      key={index} 
-      title={movie.title} 
-      genre={movie.genre} 
-      year={movie.year} 
-      image="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU5ODAyNzA4OV5BMl5BanBnXkFtZTcwNzYwNTIzNA@@._V1_SX300.jpg" 
-    />
-  ))}
-</div>
+          <div className="flex flex-wrap gap-x-6 gap-y-10 justify-between">
+            {movies.map((movie, index) => (
+              <MovieCard key={index} title={movie.title} genre={movie.genre} year={movie.year} image={movie.banner_image} />
+            ))}
+          </div>
 
 
         </div>
